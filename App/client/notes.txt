@@ -12,6 +12,15 @@
 - no sharing of monetary calculations (for the beta)
 
 
+# Layout
+
+- navbar for the money spent would be like instagrams share a video grid
+- but instead of profile pictures it is folders and names of folders and files
+- each "file" is named whatever and contains the layout for spendings/savings
+- in future have a savings vs spendings top tabs, but for now do only spendings
+- navbar will have a folder icon, and will bring you to your previous looked-at file
+
+
 # Later down the line
 
 - allow users to make shareable templates
