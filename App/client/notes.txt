@@ -1,0 +1,20 @@
+# Brainstorm
+
+- add a json version of the data, like the json picture on the apple watch
+- allow users to search up companies and add that to their dash
+- make it folder based, and allow users to add folders into other folders and that adds allow monetary values into one
+- so each folder has "files" or more so just the different spendings they consumed 
+- users' files are companies they spent money on
+- allow users to make their own "file" to keep track of whatever
+
+- account based (maybe oauth or firebase)
+- no profile picture 
+- no sharing of monetary calculations (for the beta)
+
+
+# Later down the line
+
+- allow users to make shareable templates
+- profile sharing
+- monetary calculations sharing
+- above includes a system of networking to find and share with friends/family/workers
