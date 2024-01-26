@@ -1,6 +1,9 @@
 // Home Screen
-export { default as Home } from './home/home';
+export { default as Home } from './home/Home';
 
 // Auth Screens
-export { default as Login } from './auth/login';
-export { default as Register } from './auth/register';
+export { default as Login } from './auth/Login';
+export { default as Register } from './auth/Register';
+
+// Loading Screens
+export { default as Splash } from './loading/Splash';

@@ -20,6 +20,8 @@
 - in future have a savings vs spendings top tabs, but for now do only spendings
 - navbar will have a folder icon, and will bring you to your previous looked-at file
 
+- navbar highlights look like windows 11 highlights
+
 
 # Later down the line
 
@@ -32,3 +34,12 @@
 # Colors
 
 - blue, green, grey, purple
+
+
+# Tech stack
+
+- React-Native
+- Express
+- MySQL
+- Expo
+- Redux

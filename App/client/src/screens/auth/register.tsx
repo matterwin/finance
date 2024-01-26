@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-const register = () => {
+const Register = () => {
     return(
         <View>
             <Text>Register Screen</Text>
@@ -9,4 +9,4 @@ const register = () => {
     );
 }
 
-export default register;
+export default Register;
