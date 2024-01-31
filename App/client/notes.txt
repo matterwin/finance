@@ -22,6 +22,10 @@
 
 - navbar highlights look like windows 11 highlights
 
+- left drawer of profile and allow users to make and save their own tabs like reddit
+- the tabs would be separated like Your tabs, Recently visited, and some other tabs 
+
+- make it like a game where everytime you track your expenses, you get points and there will be a ranking system of noob to pro to ceo to bezos
 
 # Later down the line
 

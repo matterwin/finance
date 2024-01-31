@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, Text, View } from "react-native";
-import Center from "../../components/containers/center";
+import Center from "../../components/containers/Center";
 import { StatusBar } from "expo-status-bar";
 
 const Splash = () => {

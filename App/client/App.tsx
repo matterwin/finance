@@ -5,6 +5,7 @@ import { Splash } from './src/screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppNavigator from './src/navigation/AppNavigator';
 import { NavigationContainer } from '@react-navigation/native';
+import AuthNavigator from './src/navigation/AuthNavigator';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -14,7 +15,7 @@ export default function App() {
     try {
       const token = await AsyncStorage.getItem('token');
       if(token == null){ // no token found
-        
+        console.log("test");        
       }
     } catch (e) {
       console.log(e);
@@ -36,8 +37,8 @@ export default function App() {
   return (
     <>
       <NavigationContainer>
-        {!isAuthenticated ? <AppNavigator /> : <Splash />}
-        <StatusBar style="auto" />
+        {isAuthenticated ? <AppNavigator /> : <AuthNavigator />}
+        <StatusBar style="light" />
       </NavigationContainer>
     </>
   );
