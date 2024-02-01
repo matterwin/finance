@@ -14,6 +14,11 @@
 
 # Layout
 
+- for now 2 bottom tabs: spent spreadsheets and data & analytics (monthy or daily or yearly)
+- built in calculator maybe on navbar
+
+- drawers on left and right top
+
 - navbar for the money spent would be like instagrams share a video grid
 - but instead of profile pictures it is folders and names of folders and files
 - each "file" is named whatever and contains the layout for spendings/savings
@@ -26,6 +31,12 @@
 - the tabs would be separated like Your tabs, Recently visited, and some other tabs 
 
 - make it like a game where everytime you track your expenses, you get points and there will be a ranking system of noob to pro to ceo to bezos
+
+- floatly up navbar where i'll have an icon for the tracker and if you pull up on the navbar, itll go up screen and you'll see your pinned or all your trackings
+- this applies to any tab as well 
+
+- have faceid lock whenever you put more sensitive information on the app to warn the user first if anyone is looking
+
 
 # Later down the line
 

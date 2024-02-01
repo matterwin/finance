@@ -1,5 +1,5 @@
 // Home Screen
-export { default as Home } from './home/Home';
+export { default as Sheet } from './sheet/Sheet';
 
 // Auth Screens
 export { default as Login } from './auth/Login';

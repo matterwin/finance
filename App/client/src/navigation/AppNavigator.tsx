@@ -19,7 +19,7 @@ const AppNavigator = () => {
 
   return (
     <Stack.Navigator initialRouteName='BottomNav'>
-      <Stack.Screen name={"BottomNav"} component={BottomNavigator} />
+      <Stack.Screen name={"BottomNav"} component={BottomNavigator} options={{ headerShown: false }}/>
     </Stack.Navigator>
   );
 };
