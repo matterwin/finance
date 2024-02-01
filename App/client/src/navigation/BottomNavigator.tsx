@@ -35,7 +35,7 @@ function BottomNavigator() {
                     ...styles.tabBarStyle
                 },
                 tabBarShowLabel: false,
-                tabBarActiveTintColor: 'red',
+                tabBarActiveTintColor: '#0062ff',
                 tabBarIcon: ({ color, focused }) => {
                     return getTabBarIcon(route.name, focused, color);
                 },
@@ -80,13 +80,13 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         height: 75,
         backgroundColor: '#1e4147',
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.20,
-        shadowRadius: 2,
-        elevation: 3,
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 1,
+        // },
+        // shadowOpacity: 0.20,
+        // shadowRadius: 2,
+        // elevation: 3,
     },
     focusedNavIconBox: {
         padding: 5,
