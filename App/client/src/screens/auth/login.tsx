@@ -17,6 +17,7 @@ const Login = () => {
            const res = await signInWithEmailAndPassword(auth, email, password);
            console.log(res);
         } catch (e) {
+            console.log(e);
            alert('Invalid creds');
         } finally {
             setLoading(false);
@@ -29,6 +30,7 @@ const Login = () => {
            const res = await createUserWithEmailAndPassword(auth, email, password);
            console.log(res);
         } catch (e) {
+            console.log(e);
             alert('Sign up failed')
         } finally {
             setLoading(false);

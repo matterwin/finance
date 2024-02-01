@@ -2,30 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Splash } from './src/screens';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppNavigator from './src/navigation/AppNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthNavigator from './src/navigation/AuthNavigator';
+import { User, onAuthStateChanged } from 'firebase/auth';
+import { FIREBASE_AUTH } from './FirebaseConfig';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  const checkSession = async () => {
-    try {
-      const token = await AsyncStorage.getItem('token');
-      if(token == null){ // no token found
-        console.log("test");        
-      }
-    } catch (e) {
-      console.log(e);
-    } finally {
-      setLoading(false);
-    }
-  }
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    checkSession();
+    setLoading(false);
+    onAuthStateChanged(FIREBASE_AUTH, (user) => {
+      console.log('user', user);
+      setUser(user);
+    });
   },[])
 
   if(loading){
@@ -37,7 +29,7 @@ export default function App() {
   return (
     <>
       <NavigationContainer>
-        {isAuthenticated ? <AppNavigator /> : <AuthNavigator />}
+        {user ? <AppNavigator /> : <AuthNavigator />}
         <StatusBar style="light" />
       </NavigationContainer>
     </>
