@@ -50,6 +50,8 @@
 
 - blue, green, grey, purple
 
+- #0b2626, #0b2226
+
 
 # Tech stack
 

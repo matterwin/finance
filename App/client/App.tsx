@@ -27,20 +27,18 @@ export default function App() {
   }
 
   return (
-    <>
+    <View style={styles.container}>
       <NavigationContainer>
         {user ? <AppNavigator /> : <AuthNavigator />}
         <StatusBar style="light" />
       </NavigationContainer>
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'brown',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#0b2226',
   },
 });

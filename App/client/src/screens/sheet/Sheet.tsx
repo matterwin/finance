@@ -1,11 +1,11 @@
 import React from "react";
-import { SafeAreaView, Button, Text, View } from "react-native";
+import { StyleSheet, SafeAreaView, Button, Text, View } from "react-native";
 import { FIREBASE_GET_AUTH } from "../../../FirebaseConfig";
 import { StatusBar } from "expo-status-bar";
 
 const Sheet = () => {
     return(
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             <StatusBar style="dark" />
             <Text>Home Screen</Text>
             <Button onPress={() => FIREBASE_GET_AUTH.signOut()} title="Logout" /> 
@@ -14,3 +14,10 @@ const Sheet = () => {
 }
 
 export default Sheet;
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#0b2226',
+    },
+});

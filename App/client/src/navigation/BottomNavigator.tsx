@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Reports from '../screens/reports/Reports';
 import Sheet from '../screens/sheet/Sheet';
-import Folders from '../screens/folders/Folders';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,6 +34,7 @@ function BottomNavigator() {
                 tabBarStyle: {
                     ...styles.tabBarStyle
                 },
+                tabBarShowLabel: false,
                 tabBarActiveTintColor: 'red',
                 tabBarIcon: ({ color, focused }) => {
                     return getTabBarIcon(route.name, focused, color);
@@ -49,17 +49,6 @@ function BottomNavigator() {
                 component={Sheet}
                 options={() => ({
                     tabBarLabel: "Sheet",
-                    headerShown: false,
-                    headerStyle: {
-                        elevation: 0, // For Android to remove shadow
-                        shadowOpacity: 0, // For iOS to remove shadow
-                    },
-               })}
-            />
-            <Tab.Screen
-                name={"Folders"}
-                component={Folders}
-                options={() => ({
                     headerShown: false,
                     headerStyle: {
                         elevation: 0, // For Android to remove shadow
@@ -87,12 +76,10 @@ export default BottomNavigator;
 const styles = StyleSheet.create({
     tabBarStyle: {
         position: 'absolute',
-        right: 10,
-        left: 10,
-        bottom: 30,
+        bottom: 0,
+        paddingTop: 10,
         height: 75,
-        backgroundColor: '#fff',
-        borderRadius: 10,
+        backgroundColor: '#1e4147',
         shadowOffset: {
             width: 0,
             height: 1,
