@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import AuthNavigator from './src/navigation/AuthNavigator';
 import { User, onAuthStateChanged } from 'firebase/auth';
 import { FIREBASE_AUTH } from './FirebaseConfig';
+import { COLORS } from './src/constants';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -39,6 +40,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0b2226',
+    backgroundColor: COLORS.deepgreen,
   },
 });

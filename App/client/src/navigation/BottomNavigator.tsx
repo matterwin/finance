@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Reports from '../screens/reports/Reports';
 import Sheet from '../screens/sheet/Sheet';
+import { COLORS } from '../constants';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,12 +36,19 @@ function BottomNavigator() {
                     ...styles.tabBarStyle
                 },
                 tabBarShowLabel: false,
-                tabBarActiveTintColor: '#0062ff',
+                tabBarActiveTintColor: COLORS.lightblue,
+                tabBarInactiveTintColor: COLORS.grey,
                 tabBarIcon: ({ color, focused }) => {
                     return getTabBarIcon(route.name, focused, color);
                 },
                 tabBarLabelStyle: {
                     fontSize: 10,
+                },
+                headerLeftContainerStyle: {
+                    paddingLeft: 10
+                },
+                headerRightContainerStyle: {
+                    paddingRight: 10
                 },
             })}
         >
@@ -49,12 +57,18 @@ function BottomNavigator() {
                 component={Sheet}
                 options={() => ({
                     tabBarLabel: "Sheet",
-                    headerShown: false,
+                    headerShown: true,
                     headerStyle: {
                         elevation: 0, // For Android to remove shadow
                         shadowOpacity: 0, // For iOS to remove shadow
+                        backgroundColor: 'transparent',
                     },
-               })}
+                    headerTransparent: true,
+                    headerRight: () => 
+                        <View style={styles.circleBg}>
+                            <Icon name="notifications-outline" size={26} color={COLORS.grey} />
+                        </View>
+                })}
             />
             <Tab.Screen
                 name={"Reports"}
@@ -64,7 +78,9 @@ function BottomNavigator() {
                     headerStyle: {
                         elevation: 0, // For Android to remove shadow
                         shadowOpacity: 0, // For iOS to remove shadow
+                        backgroundColor: COLORS.teal
                     },
+                    headerTransparent: true
                })}
             />
         </Tab.Navigator>
@@ -91,7 +107,12 @@ const styles = StyleSheet.create({
     focusedNavIconBox: {
         padding: 5,
         paddingBottom: 10,
-        backgroundColor: 'rgba(0, 0, 255, 0.3)',
+        backgroundColor: COLORS.royalblue,
         borderRadius: 3
+    },
+    circleBg: {
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        padding: 5,
+        borderRadius: 100
     }
 });

@@ -45,6 +45,8 @@
 - monetary calculations sharing
 - above includes a system of networking to find and share with friends/family/workers
 
+- template sheets for children savings, school
+
 
 # Colors
 
