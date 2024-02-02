@@ -2,17 +2,17 @@ import React from "react";
 import { SafeAreaView, Button, Text, View, StyleSheet} from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-const Test = () => {
+const Test2 = () => {
     return(
             <View style={[styles.container, { paddingTop: 50 }]}>
             <StatusBar style="light" />
-            <Text>Test Screen</Text>
+            <Text>Test2 Screen</Text>
             {/* <Button onPress={() => FIREBASE_GET_AUTH.signOut()} title="Logout" /> */}
             </View>
     );
 }
 
-export default Test;
+export default Test2;
 
 const styles = StyleSheet.create({
     container: {

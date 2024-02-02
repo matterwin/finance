@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useRef } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler'; // Import GestureHandlerRootView
 import BottomSheet from '@gorhom/bottom-sheet';
+import { COLORS } from '../constants';
 
 const BottomSheetWrapper = () => {
   // ref
@@ -17,42 +17,32 @@ const BottomSheetWrapper = () => {
 
   // renders
   return (
-    <GestureHandlerRootView style={styles.container}> 
-        <BottomSheet
-          ref={bottomSheetRef}
-          index={0}
-          snapPoints={snapPoints}
-          onChange={handleSheetChanges}
-          backgroundStyle={{ backgroundColor: '#1e4147' }}
-        >
-          <View style={styles.contentContainer}>
-            <Text>Folders</Text>
-          </View>
-        </BottomSheet>
-    </GestureHandlerRootView>
+      <BottomSheet
+        ref={bottomSheetRef}
+        index={0}
+        snapPoints={snapPoints}
+        onChange={handleSheetChanges}
+        backgroundStyle={{ backgroundColor: '#1e4147', borderRadius: 20 }}
+        handleIndicatorStyle={{ backgroundColor: COLORS.grey }}
+      >
+        <View style={styles.contentContainer}>
+          <Text style={styles.foldersTitle}>Folders</Text>
+        </View>
+      </BottomSheet>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-    justifyContent: 'flex-end',
-    backgroundColor: 'red', 
-    // padding: 24,
-    // paddingBottom: 120,
-    // backgroundColor: 'red',
-    // position: 'absolute',
-    // bottom: 0
-    marginTop: 50,
-  },
   contentContainer: {
     flex: 1,
-    // marginBottom: 50,
     alignItems: 'center',
     backgroundColor: '#1e4147',
-    // paddingTop: 50
-    // margin: 100,
   },
+  foldersTitle: {
+    color: COLORS.grey,
+    fontWeight: '900',
+    fontSize: 15
+  }
 });
 
 export default BottomSheetWrapper;
