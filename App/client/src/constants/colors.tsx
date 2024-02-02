@@ -4,5 +4,6 @@ export default {
     lightblue: '#0062ff',
     teal: '#1e4147',
     black: '#0a0a0a',
-    grey: '#90959e'
+    grey: '#90959e',
+    white: '#ffffff',
 };

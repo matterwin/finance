@@ -8,10 +8,10 @@ const Sheet = () => {
     return(
        <SafeAreaView style={styles.container}>
             <View style={[styles.container, { paddingTop: 50 }]}>
-                <BottomSheetWrapper />
                 <StatusBar style="light" />
                 <Text>Home Screen</Text>
                 <Button onPress={() => FIREBASE_GET_AUTH.signOut()} title="Logout" />
+                <BottomSheetWrapper />
             </View>
         </SafeAreaView>
     ); 

@@ -44,12 +44,7 @@ function BottomNavigator() {
                 tabBarLabelStyle: {
                     fontSize: 10,
                 },
-                headerLeftContainerStyle: {
-                    paddingLeft: 10
-                },
-                headerRightContainerStyle: {
-                    paddingRight: 10
-                },
+                
             })}
         >
             <Tab.Screen
@@ -57,17 +52,12 @@ function BottomNavigator() {
                 component={Sheet}
                 options={() => ({
                     tabBarLabel: "Sheet",
-                    headerShown: true,
+                    headerShown: false,
                     headerStyle: {
                         elevation: 0, // For Android to remove shadow
                         shadowOpacity: 0, // For iOS to remove shadow
                         backgroundColor: 'transparent',
                     },
-                    headerTransparent: true,
-                    headerRight: () => 
-                        <View style={styles.circleBg}>
-                            <Icon name="notifications-outline" size={26} color={COLORS.grey} />
-                        </View>
                 })}
             />
             <Tab.Screen
@@ -78,7 +68,7 @@ function BottomNavigator() {
                     headerStyle: {
                         elevation: 0, // For Android to remove shadow
                         shadowOpacity: 0, // For iOS to remove shadow
-                        backgroundColor: COLORS.teal
+                        backgroundColor: 'transparent' 
                     },
                     headerTransparent: true
                })}

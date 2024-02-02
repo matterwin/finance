@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Splash } from './src/screens';
-import AppNavigator from './src/navigation/AppNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthNavigator from './src/navigation/AuthNavigator';
 import { User, onAuthStateChanged } from 'firebase/auth';
 import { FIREBASE_AUTH } from './FirebaseConfig';
 import { COLORS } from './src/constants';
+import RootNavigator from './src/navigation/RootNavigator';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -30,7 +30,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-        {user ? <AppNavigator /> : <AuthNavigator />}
+        {user ? <RootNavigator /> : <AuthNavigator />}
         <StatusBar style="light" />
       </NavigationContainer>
     </View>

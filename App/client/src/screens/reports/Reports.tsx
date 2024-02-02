@@ -7,6 +7,7 @@ const Reports = () => {
         <SafeAreaView>
             <StatusBar style="dark" />
             <Text>Test Screen</Text>
+            {/* <Button onPress={() => FIREBASE_GET_AUTH.signOut()} title="Logout" /> */}
         </SafeAreaView>
     );
 }
