@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Reports from '../screens/reports/Reports';
 import Sheet from '../screens/sheet/Sheet';
 import { COLORS } from '../constants';
+import BottomSheetWrapper from '../components/BottomSheetWrapper';
 
 const Tab = createBottomTabNavigator();
 

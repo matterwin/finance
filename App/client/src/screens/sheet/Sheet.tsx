@@ -1,18 +1,16 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Button, Text, View, Platform } from "react-native";
-import { FIREBASE_GET_AUTH } from "../../../FirebaseConfig";
 import { StatusBar } from "expo-status-bar";
 import BottomSheetWrapper from "../../components/BottomSheetWrapper";
+import SheetNavigator from "../../navigation/SheetNavigator";
 
 const Sheet = () => {
     return(
        <SafeAreaView style={styles.container}>
-            <View style={[styles.container, { paddingTop: 50 }]}>
-                <StatusBar style="light" />
-                <Text>Home Screen</Text>
-                <Button onPress={() => FIREBASE_GET_AUTH.signOut()} title="Logout" />
+            {/* <View style={[styles.container, { paddingTop: 50 }]}> */}
+                <SheetNavigator />
                 <BottomSheetWrapper />
-            </View>
+            {/* </View> */}
         </SafeAreaView>
     ); 
 }

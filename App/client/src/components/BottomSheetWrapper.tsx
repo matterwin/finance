@@ -8,7 +8,7 @@ const BottomSheetWrapper = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['10%', '100%'], []);
+  const snapPoints = useMemo(() => ['10%', '80%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
@@ -35,10 +35,15 @@ const BottomSheetWrapper = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 24,
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'flex-end',
+    backgroundColor: 'red', 
+    // padding: 24,
     // paddingBottom: 120,
-    // backgroundColor: 'red'
+    // backgroundColor: 'red',
+    // position: 'absolute',
+    // bottom: 0
+    marginTop: 50,
   },
   contentContainer: {
     flex: 1,
@@ -46,6 +51,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#1e4147',
     // paddingTop: 50
+    // margin: 100,
   },
 });
 
