@@ -1,10 +1,11 @@
 import React from "react";
 import { SafeAreaView, Button, Text, View, StyleSheet, ScrollView} from "react-native";
+import { COLORS } from "../../constants";
 
 const Test = () => {
     return(
             <ScrollView style={[styles.container, { paddingTop: 50 }]}>
-            <Text style={{ color: 'red' }}>Test Screen</Text>
+            <Text style={{ color: COLORS.orange }}>Test Screen</Text>
             {/* <Button onPress={() => FIREBASE_GET_AUTH.signOut()} title="Logout" /> */}
             </ScrollView>
     );

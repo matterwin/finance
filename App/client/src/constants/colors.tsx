@@ -8,4 +8,5 @@ export default {
     white: '#ffffff',
     tealwhite: '#47686e',
     brightteal: '#78a7b0',
+    orange: '#ff9021'
 };
