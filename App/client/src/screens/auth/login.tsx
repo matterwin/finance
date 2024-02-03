@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { View, Text, StyleSheet, TextInput, ActivityIndicator, Button, KeyboardAvoidingView } from 'react-native'
 import React, { useState } from 'react'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -42,7 +41,6 @@ const Login = () => {
             <KeyboardAvoidingView behavior='padding'>
                 <TextInput style={styles.input} placeholder='Email' autoCapitalize='none' onChangeText={(text) => setEmail(text)}/>
                 <TextInput style={styles.input} secureTextEntry={true} placeholder='Password' autoCapitalize='none' onChangeText={(text) => setPassword(text)}/>
-                <StatusBar style="dark" />
 
                 { loading ? <ActivityIndicator size="large" color='#000ff'/>
                 :   <>

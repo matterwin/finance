@@ -25,7 +25,7 @@ function RootNavigator() {
                 name={"BottomNav"} 
                 component={BottomNavigator} 
                 options={() => ({ 
-                    headerShown: true,
+                    headerShown: false,
                     headerTransparent: true,
                     headerRight: () => 
                         <View style={styles.circleBg}>
