@@ -8,10 +8,30 @@ import { User, onAuthStateChanged } from 'firebase/auth';
 import { FIREBASE_AUTH } from './FirebaseConfig';
 import { COLORS } from './src/constants';
 import RootNavigator from './src/navigation/RootNavigator';
+import {
+  useFonts,
+  Mukta_200ExtraLight,
+  Mukta_300Light,
+  Mukta_400Regular,
+  Mukta_500Medium,
+  Mukta_600SemiBold,
+  Mukta_700Bold,
+  Mukta_800ExtraBold,
+} from '@expo-google-fonts/mukta';
+
 
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<User | null>(null);
+  const [fontsLoaded, fontError] = useFonts({
+    Mukta_200ExtraLight,
+    Mukta_300Light,
+    Mukta_400Regular,
+    Mukta_500Medium,
+    Mukta_600SemiBold,
+    Mukta_700Bold,
+    Mukta_800ExtraBold,
+  });
 
   useEffect(() => {
     setLoading(false);
@@ -21,6 +41,10 @@ export default function App() {
     });
   },[])
 
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
   if(loading){
     return (
       <Splash />
@@ -28,12 +52,12 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    // <View style={styles.container}>
       <NavigationContainer>
         {user ? <RootNavigator /> : <AuthNavigator />}
         <StatusBar style="light" />
       </NavigationContainer>
-    </View>
+    // </View>
   );
 }
 

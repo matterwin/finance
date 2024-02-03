@@ -3,6 +3,7 @@ import { StyleSheet, SafeAreaView, Button, Text, View, Platform } from "react-na
 import { StatusBar } from "expo-status-bar";
 import BottomSheetWrapper from "../../components/BottomSheetWrapper";
 import SheetNavigator from "../../navigation/SheetNavigator";
+import { COLORS } from "../../constants";
 
 const Sheet = () => {
     return(
@@ -20,7 +21,6 @@ export default Sheet;
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#0b2226',
-      marginBottom: 40
+      backgroundColor: COLORS.deepgreen,
     },
 });

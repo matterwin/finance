@@ -13,10 +13,10 @@ function RootNavigator() {
             initialRouteName={"BottomNav"}
             screenOptions={() => ({
                 headerLeftContainerStyle: {
-                    paddingLeft: 10
+                    paddingLeft: 15
                 },
                 headerRightContainerStyle: {
-                    paddingRight: 10
+                    paddingRight: 15
                 },
                 headerTintColor: COLORS.white,
             })}

@@ -5,7 +5,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Reports from '../screens/reports/Reports';
 import Sheet from '../screens/sheet/Sheet';
 import { COLORS } from '../constants';
-import BottomSheetWrapper from '../components/BottomSheetWrapper';
 
 const Tab = createBottomTabNavigator();
 
@@ -82,18 +81,11 @@ export default BottomNavigator;
 
 const styles = StyleSheet.create({
     tabBarStyle: {
-        position: 'absolute',
-        bottom: 0,
         paddingTop: 10,
-        height: 75,
         backgroundColor: '#1e4147',
-        // shadowOffset: {
-        //     width: 0,
-        //     height: 1,
-        // },
-        // shadowOpacity: 0.20,
-        // shadowRadius: 2,
-        // elevation: 3,
+        borderTopColor: COLORS.tealwhite,
+        borderWidth: 0,
+        borderTopWidth: 1
     },
     focusedNavIconBox: {
         padding: 5,

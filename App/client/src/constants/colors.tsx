@@ -6,4 +6,6 @@ export default {
     black: '#0a0a0a',
     grey: '#90959e',
     white: '#ffffff',
+    tealwhite: '#47686e',
+    brightteal: '#78a7b0',
 };
