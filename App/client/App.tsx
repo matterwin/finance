@@ -52,12 +52,10 @@ export default function App() {
   }
 
   return (
-    // <View style={styles.container}>
       <NavigationContainer>
         {user ? <RootNavigator /> : <AuthNavigator />}
         <StatusBar style="light" translucent={true}/>
       </NavigationContainer>
-    // </View>
   );
 }
 

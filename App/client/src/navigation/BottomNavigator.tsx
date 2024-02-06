@@ -12,7 +12,7 @@ const getTabBarIcon = (routeName: String, focused: boolean, color: ColorValue) =
     let iconName;
 
     if(routeName === "Sheet") iconName = focused ? 'wallet' : 'wallet';
-    if(routeName === "Reports") iconName = focused ? 'calendar' : 'calendar';
+    if(routeName === "Reports") iconName = focused ? 'person' : 'person';
     if(routeName === "Folders") iconName = focused ? 'folder-open' : 'folder';
 
     if(focused){
@@ -33,7 +33,9 @@ function BottomNavigator() {
             initialRouteName={"home"}
             screenOptions={({ route }) => ({
                 tabBarStyle: {
-                    ...styles.tabBarStyle
+                    ...styles.tabBarStyle,
+                    backgroundColor: (route.name == 'Sheet') ? COLORS.teal : COLORS.deepgreen,
+                    borderTopColor: (route.name == 'Sheet') ? COLORS.tealwhite : 'transparent',
                 },
                 tabBarShowLabel: false,
                 tabBarActiveTintColor: COLORS.lightblue,
@@ -44,7 +46,6 @@ function BottomNavigator() {
                 tabBarLabelStyle: {
                     fontSize: 10,
                 },
-                
             })}
         >
             <Tab.Screen
@@ -82,10 +83,10 @@ export default BottomNavigator;
 const styles = StyleSheet.create({
     tabBarStyle: {
         paddingTop: 10,
-        backgroundColor: '#1e4147',
+        backgroundColor: COLORS.teal,
         borderTopColor: COLORS.tealwhite,
         borderWidth: 0,
-        borderTopWidth: 1
+        // borderTopWidth: 1
     },
     focusedNavIconBox: {
         padding: 5,

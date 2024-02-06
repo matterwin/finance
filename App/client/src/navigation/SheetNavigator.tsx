@@ -4,31 +4,15 @@ import Test from '../screens/sheet/Test';
 import Test2 from '../screens/sheet/Test2';
 import { StyleSheet, View } from 'react-native';
 import { COLORS } from '../constants';
-import { BlurView } from 'expo-blur';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createMaterialTopTabNavigator();
 
-const MenuBlur = () => {
-  return (
-    <View style={{ flex: 1 }}>
-      <View
-        style={{
-          width: '100%',
-          height: 55,
-          borderRadius: 90,
-          borderTopColor: 'white',
-          borderBottomColor: 'white',
-          overflow: 'hidden',
-        }}
-      >
-        <BlurView
-          intensity={10}
-          style={{ flex: 1, backgroundColor: ' rgba(61, 53, 105, 0.4)' }}
-        />
-      </View>
-    </View>
-  );
-};
+const FloatingIcon = () => (
+  <View style={styles.floatingIcon}>
+    <Icon name="person" size={30} color="grey" />
+  </View>
+);
 
 function SheetNavigator() {
   return (
@@ -41,7 +25,7 @@ function SheetNavigator() {
             fontSize: 13
           },
           tabBarScrollEnabled: true,
-          tabBarItemStyle: { width: 100, height: 45 },
+          tabBarItemStyle: { width: 100, height: 45, marginTop: 40},
           tabBarActiveTintColor: COLORS.white,
           tabBarInactiveTintColor: COLORS.grey,
           tabBarIndicatorStyle: {
@@ -92,7 +76,9 @@ function SheetNavigator() {
 export default SheetNavigator;
 
 const styles = StyleSheet.create({
-    tabBar: {
-        display: 'none'
-    }
+  floatingIcon: {
+      position: 'absolute',
+      top: 40, // Adjust this value based on your layout
+      right: 20, // Adjust this value based on your layout
+    },
 });
