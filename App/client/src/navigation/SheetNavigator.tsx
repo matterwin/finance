@@ -2,17 +2,10 @@ import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Test from '../screens/sheet/Test';
 import Test2 from '../screens/sheet/Test2';
-import { StyleSheet, View } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
 import { COLORS } from '../constants';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createMaterialTopTabNavigator();
-
-const FloatingIcon = () => (
-  <View style={styles.floatingIcon}>
-    <Icon name="person" size={30} color="grey" />
-  </View>
-);
 
 function SheetNavigator() {
   return (
@@ -22,10 +15,15 @@ function SheetNavigator() {
           tabBarShowLabel: true,
           tabBarShowIcon: true,
           tabBarLabelStyle: {
-            fontSize: 13
+            fontSize: 14
           },
           tabBarScrollEnabled: true,
-          tabBarItemStyle: { width: 100, height: 45, marginTop: 40},
+          tabBarItemStyle: { 
+            height: 45, 
+            marginTop: 40,
+            width: 90,
+            // backgroundColor: 'red'
+          },
           tabBarActiveTintColor: COLORS.white,
           tabBarInactiveTintColor: COLORS.grey,
           tabBarIndicatorStyle: {
@@ -34,10 +32,12 @@ function SheetNavigator() {
             backgroundColor: COLORS.orange
           },
           tabBarContentContainerStyle: {
-            paddingHorizontal: 0
+            paddingHorizontal: 0,
+            // width: 20,
           },
           tabBarGap: 0,
           tabBarStyle: {
+              width: Dimensions.get('window').width,
               backgroundColor: COLORS.teal + 'AA',
               borderBottomWidth: 1,
               borderColor: COLORS.tealwhite,
@@ -54,19 +54,15 @@ function SheetNavigator() {
           component={Test2}
         />
         <Tab.Screen
-          name="Test30"
+          name="+w"
           component={Test2}
         />
         <Tab.Screen
-          name="Test32"
+          name="+d"
           component={Test2}
         />
         <Tab.Screen
-          name="Test112"
-          component={Test2}
-        />
-        <Tab.Screen
-          name="Test2"
+          name="+"
           component={Test2}
         />
       </Tab.Navigator>
@@ -76,9 +72,4 @@ function SheetNavigator() {
 export default SheetNavigator;
 
 const styles = StyleSheet.create({
-  floatingIcon: {
-      position: 'absolute',
-      top: 40, // Adjust this value based on your layout
-      right: 20, // Adjust this value based on your layout
-    },
 });
