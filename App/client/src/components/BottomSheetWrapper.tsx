@@ -1,39 +1,51 @@
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { COLORS } from '../constants';
+import CustomBackdrop from './CustomBackdrop';
 
-const BottomSheetWrapper = () => {
-  // ref
+type Props = {
+  children: JSX.Element | JSX.Element[];
+}
+
+const BottomSheetWrapper = ({ children }: Props) => {
   const bottomSheetRef = useRef<BottomSheet>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // variables
-  const snapPoints = useMemo(() => ['7%', '75%'], []);
+  const snapPoints = useMemo(() => ['7%', '67%', '93%'], []);
 
-  // callbacks
   const handleSheetChanges = useCallback((index: number) => {
     console.log('handleSheetChanges', index);
   }, []);
 
-  // renders
   return (
+    <View style={styles.container}>
+      {children}
       <BottomSheet
         ref={bottomSheetRef}
         index={0}
         snapPoints={snapPoints}
         onChange={handleSheetChanges}
-        handleStyle={{ marginBottom: -10, borderRadius: 15, }}
-        backgroundStyle={{ backgroundColor: COLORS.teal, borderRadius: 15, borderWidth: 1, borderColor: COLORS.tealwhite, }}
+        handleStyle={{ marginBottom: -10, borderRadius: 15 }}
+        backgroundStyle={{ backgroundColor: COLORS.teal, borderRadius: 15, borderWidth: 1, borderColor: COLORS.tealwhite }}
         handleIndicatorStyle={{ backgroundColor: COLORS.brightteal, width: 60, height: 5 }}
+        backdropComponent={(props) => (
+          <CustomBackdrop {...props}/>
+        )}
       >
         <View style={styles.contentContainer}>
           <Text style={styles.foldersTitle}>Folders</Text>
         </View>
       </BottomSheet>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    position: 'relative',
+  },
   contentContainer: {
     flex: 1,
     alignItems: 'flex-start',
@@ -42,7 +54,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     position: 'relative',
-    zIndex: 0,
+    zIndex: 1,
   },
   foldersTitle: {
     color: COLORS.grey,
@@ -52,3 +64,4 @@ const styles = StyleSheet.create({
 });
 
 export default BottomSheetWrapper;
+

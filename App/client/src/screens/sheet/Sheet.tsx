@@ -28,19 +28,20 @@ const Sheet = () => {
 
     return(
         <>
-            <SheetNavigator />
-            <View style={styles.floatingIcon}>
-                <TouchableOpacity onPress={() => setCurrent('barcode')}>
-                    <VisualIcon current={current}/>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => setCurrent('grid')}>
-                    <CellIcon current={current}/>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => setCurrent('code')}>
-                    <JSONIcon current={current}/>
-                </TouchableOpacity>
-            </View>
-            <BottomSheetWrapper />
+            <BottomSheetWrapper>
+                <SheetNavigator />
+                <View style={styles.floatingIcon}>
+                    <TouchableOpacity onPress={() => setCurrent('barcode')}>
+                        <VisualIcon current={current}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setCurrent('grid')}>
+                        <CellIcon current={current}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setCurrent('code')}>
+                        <JSONIcon current={current}/>
+                    </TouchableOpacity>
+                </View>
+            </BottomSheetWrapper>
         </>
     ); 
 }
