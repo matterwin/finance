@@ -45,13 +45,12 @@ function SheetNavigator() {
             height: 45,
             marginTop: 40,
             width: 150,
-            // backgroundColor: 'red'
           },
           tabBarActiveTintColor: COLORS.white,
           tabBarInactiveTintColor: COLORS.grey,
           tabBarIndicatorStyle: {
-            width: 30,
-            left: (100 - 20) / 2,
+            // width: 30,
+            // left: (100 - 20) / 2,
             backgroundColor: COLORS.orange
           },
           tabBarContentContainerStyle: {
@@ -73,15 +72,19 @@ function SheetNavigator() {
             key={index}
             name={tab.name}
             component={tab.component}
+            options={{
+              swipeEnabled: index !== tabs.length - 1,
+            }}
           />
         ))}
         <Tab.Screen
           name="+"
+          options={{ swipeEnabled: false }}
           listeners={({ navigation }) => ({
             tabPress: event => {
               event.preventDefault();
               addNewTab();
-            }
+            },
           })}
         >
           {() => null}

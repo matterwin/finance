@@ -6,19 +6,19 @@ import { COLORS } from "../../constants";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const VisualIcon = (props: {current: string}) => (
-    <View style={[styles.circle, { backgroundColor: (props.current === 'barcode') ? COLORS.lightblue : 'transparent' }]}>
+    <View style={[styles.circle, { backgroundColor: (props.current === 'barcode') ? COLORS.orange : 'transparent' }]}>
         <Icon name="barcode" size={25} color="white" />
     </View>
 );
 
 const CellIcon = (props: {current: string}) => (
-    <View style={[styles.circle, { backgroundColor: (props.current === 'grid') ? COLORS.lightblue : 'transparent' }]}>
+    <View style={[styles.circle, { backgroundColor: (props.current === 'grid') ? COLORS.orange : 'transparent' }]}>
         <Icon name="grid" size={25} color="white" />
     </View>
 );
 
 const JSONIcon = (props: {current: string}) => (
-    <View style={[styles.circle, { backgroundColor: (props.current === 'code') ? COLORS.lightblue : 'transparent' }]}>
+    <View style={[styles.circle, { backgroundColor: (props.current === 'code') ? COLORS.orange : 'transparent' }]}>
         <Icon name="code" size={25} color="white" />
     </View>
 );

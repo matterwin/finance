@@ -10,7 +10,6 @@ type Props = {
 
 const BottomSheetWrapper = ({ children }: Props) => {
   const bottomSheetRef = useRef<BottomSheet>(null);
-  const [isOpen, setIsOpen] = useState(false);
 
   const snapPoints = useMemo(() => ['7%', '67%', '93%'], []);
 
