@@ -62,9 +62,9 @@ const App = () => {
 
 const AppWrapper = () => {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
       <App />
-    </Provider>
+    // </Provider>
   );
 }
 
